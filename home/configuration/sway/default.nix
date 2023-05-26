@@ -12,6 +12,8 @@
 
       input."type:keyboard".xkb_layout = "br";
 
+      bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
+
       keybindings = let
         swayConf = config.wayland.windowManager.sway.config;
 	    terminal = swayConf.terminal;
