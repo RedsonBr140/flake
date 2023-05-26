@@ -11,6 +11,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      export WLR_NO_HARDWARE_CURSORS=1
     '';
 
     plugins = with pkgs.fishPlugins; [

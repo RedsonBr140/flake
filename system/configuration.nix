@@ -14,10 +14,15 @@
     '';
   };
 
+  swapDevices = [
+  	{
+  	  device = "/swapfile";
+  	  size = 2048;
+  	}
+  ];
   zramSwap.enable = true;
 
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.device = "/dev/sdg";
 
@@ -44,6 +49,8 @@
     keyMap = "br-abnt2";
   };
 
+  programs.fish.enable = true;
+
   users.users.redson = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -67,6 +74,7 @@
     htop # System stats
     neofetch # NixOS btw
     git # CVS was better
+    glfw-wayland # Essential part of the system, obviously not being used just for Minecraft
   ];
 
   security.doas = {
