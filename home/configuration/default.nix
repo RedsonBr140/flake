@@ -2,6 +2,7 @@
 
   imports = [
     ./fish.nix
+    ./foot.nix
   ];
 
   home.packages = with pkgs; [
