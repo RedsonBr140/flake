@@ -62,13 +62,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    lm_sensors
-    wl-clipboard
-    htop
-    neofetch
-    git
+    micro # Cool editor wow
+    lm_sensors # Nooo don't blow up
+    htop # System stats
+    neofetch # NixOS btw
+    git # CVS was better
   ];
 
   security.doas = {
