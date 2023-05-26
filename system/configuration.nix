@@ -46,6 +46,7 @@
 
   users.users.redson = {
     isNormalUser = true;
+    shell = pkgs.fish;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       syncthing

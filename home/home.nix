@@ -1,5 +1,7 @@
 { inputs, libs, config, pkgs, ... }: {
-  imports = [];
+  imports = [
+    ./configuration
+  ];
 
   nixpkgs = {
   overlays = [ inputs.prismlauncher.overlays.default ];
@@ -13,22 +15,7 @@
   home.username = "redson";
   home.homeDirectory = "/home/redson";
 
-  home.packages = with pkgs; [
-    prismlauncher
-  ];
-
   programs.home-manager.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName = "Redson";
-    userEmail = "redson@riseup.net";
-
-    signing = {
-      key = "A55CD2880240ABD7";
-      signByDefault = true;
-    };
-  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
