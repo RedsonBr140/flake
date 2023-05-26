@@ -3,6 +3,7 @@
   imports = [
     ./fish.nix
     ./foot.nix
+    ./sway
   ];
 
   home.packages = with pkgs; [
