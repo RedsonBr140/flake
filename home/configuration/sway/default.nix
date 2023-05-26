@@ -79,6 +79,26 @@
         "${mod}+Shift+8" = "move container to workspace number 8";
         "${mod}+Shift+9" = "move container to workspace number 9";
         "${mod}+Shift+0" = "move container to workspace number 10";
+
+        # Layout stuff
+        "${mod}+b" = "splith";
+        "${mod}+v" = "splitv";
+        # Switch the current container between different layout styles
+        "${mod}+s" = "layout stacking";
+        "${mod}+Shift+t" = "layout tabbed";
+        "${mod}+e" = "layout toggle split";
+
+        # Make the current focus fullscreen
+        "${mod}+f" = "fullscreen";
+
+        # Toggle the current focus between tiling and floating mode
+        "${mod}+Shift+space" =  "floating toggle";
+
+        # Swap focus between the tiling area and the floating area
+        "${mod}+space" = "focus mode_toggle";
+
+        # Move focus to the parent container
+        "${mod}+a" = "focus parent";
       };
     };
   };
