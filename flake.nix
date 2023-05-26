@@ -1,9 +1,11 @@
 {
-  description = "Your new nix config";
+  description = "RedsonBr140's NixOS configuration files & home-manager.";
 
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Based home-manager
     home-manager = {

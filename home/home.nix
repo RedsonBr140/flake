@@ -2,7 +2,7 @@
   imports = [];
 
   nixpkgs = {
-  overlays = [];
+  overlays = [ inputs.prismlauncher.overlays.default ];
 
   config = {
     allowUnfree = true;
@@ -13,6 +13,10 @@
   home.username = "redson";
   home.homeDirectory = "/home/redson";
 
+  home.packages = with pkgs; [
+    prismlauncher
+  ];
+
   programs.home-manager.enable = true;
 
   programs.git = {
@@ -21,7 +25,7 @@
     userEmail = "redson@riseup.net";
 
     signing = {
-      key = "A55CD2880240ABD7"
+      key = "A55CD2880240ABD7";
       signByDefault = true;
     };
   };

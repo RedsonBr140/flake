@@ -58,7 +58,6 @@
     ];
   };
 
-  nixpkgs.overlays = [ inputs.prismlauncher.overlays.default ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -69,7 +68,6 @@
     htop
     neofetch
     git
-    prismlauncher
   ];
 
   security.doas = {
