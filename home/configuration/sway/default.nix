@@ -14,6 +14,14 @@
 
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
 
+      colors.focused = {
+      	background = "#1d2021";
+      	childBorder = "#504945";
+      	border = "#1d2021";
+      	indicator = "#1d2021";
+      	text = "#1d2021";
+      };
+
       keybindings = let
         swayConf = config.wayland.windowManager.sway.config;
 	    terminal = swayConf.terminal;
