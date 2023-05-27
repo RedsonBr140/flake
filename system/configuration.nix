@@ -26,20 +26,7 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.device = "/dev/sdg";
 
-  networking = {
-    hostName = "nixos";
-    defaultGateway = "192.168.100.1";
-    nameservers = [ "1.1.1.1" ];
-
-    # I like having a static IP address.
-    interfaces.ensp2s0 = {
-      useDHCP = false;
-      ipv4.addresses = [ {
-        address = "192.168.100.100";
-	prefixLength = 24;
-      } ];
-    };
-  };
+  networking.hostName = "nixos";
 
   time.timeZone = "America/Recife";
 
