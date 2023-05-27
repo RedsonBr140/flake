@@ -9,9 +9,4 @@ nixos-rebuild switch --flake .#nixos
 
 #If you're still on a live installation medium, run the following instead, and reboot.
 nixos-install --flake .#nixos
-
-# If you don't have home-manager yet:
-nix shell nixpkgs#home-manager
-
-# And then, just use it as normal.
-home-manager switch --flake .#redson@nixos
+```

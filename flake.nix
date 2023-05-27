@@ -21,17 +21,20 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./system/configuration.nix ];
+        modules = [
+          ./system/configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
       };
     };
-    homeConfigurations = {
-      "redson@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
 
-        modules = [ ./home/home.nix ];
-      };
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      users.redson = import ./home/home.nix;
+      extraSpecialArgs = { inherit inputs; };
     };
   };
 }
