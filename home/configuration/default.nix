@@ -9,7 +9,15 @@
   home.packages = with pkgs; [
     grc # dependency for fish plugin
 
+    waybar
+    firefox
+    wofi
+    mako
+    grim
+    slurp
+
     prismlauncher
+    glfw-wayland
   ];
 
   programs.git = {

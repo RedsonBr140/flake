@@ -47,26 +47,18 @@
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      syncthing
-      waybar
-      firefox
-      wofi
-      mako
-      grim
-      slurp
-    ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    nix-your-shell # Nix, respect my shell please :(
     micro # Cool editor wow
     lm_sensors # Nooo don't blow up
     htop # System stats
     neofetch # NixOS btw
     git # CVS was better
-    glfw-wayland # Essential part of the system, obviously not being used just for Minecraft
+
   ];
 
   security.doas = {

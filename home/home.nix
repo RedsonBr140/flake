@@ -3,15 +3,6 @@
     ./configuration
   ];
 
-  nixpkgs = {
-  overlays = [ inputs.prismlauncher.overlays.default ];
-
-  config = {
-    allowUnfree = true;
-    allowUnfreePredicate = (_: true);
-  };
-  };
-
   home.username = "redson";
   home.homeDirectory = "/home/redson";
 
