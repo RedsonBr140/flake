@@ -6,6 +6,21 @@
   home.username = "redson";
   home.homeDirectory = "/home/redson";
 
+  home.pointerCursor = {
+    name = "Vanilla-DMZ";
+    package = pkgs.vanilla-dmz;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      package = pkgs.vanilla-dmz;
+      name = "Vanilla-DMZ";
+    };
+  };
+
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs

@@ -4,6 +4,7 @@
     ./fish.nix
     ./foot.nix
     ./sway
+    ./nvim
   ];
 
   home.packages = with pkgs; [
@@ -13,8 +14,10 @@
     firefox
     wofi
     mako
+
     grim
     slurp
+    wl-clipboard
 
     prismlauncher
     glfw-wayland

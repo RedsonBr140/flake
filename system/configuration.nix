@@ -43,6 +43,13 @@
 
   programs.fish.enable = true;
 
+  programs.neovim = {
+   enable = true;
+   defaultEditor = true;
+  };
+
+  environment.variables.EDITOR = "nvim";
+
   users.users.redson = {
     isNormalUser = true;
     shell = pkgs.fish;
