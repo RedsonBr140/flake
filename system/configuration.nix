@@ -22,9 +22,14 @@
   ];
   zramSwap.enable = true;
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.device = "/dev/sdg";
+
+  boot.loader.grub = {
+    enable = true;
+    useOSProber = true;
+    device = "/dev/sdg";
+  };
+  
+  boot.tmp.cleanOnBoot = true;
 
   networking.hostName = "nixos";
 
@@ -84,6 +89,8 @@
   xdg.portal.wlr.enable = true;
 
   # List services that you want to enable:
+
+  services.jellyfin.enable = true;
 
   # Pipewire
   services.pipewire = {
