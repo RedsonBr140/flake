@@ -28,7 +28,7 @@
   fileSystems."/media/redson" =
     { device = "/dev/disk/by-uuid/749b9d73-86a3-45b2-9b7b-aea5821f2f25";
       fsType = "btrfs";
-      options = [ "defaults" "noatime" "user" "rw" ];
+      options = [ "defaults" "noatime" "nodev" "nofail" "user" "rw" "exec" "x-gvfs-show" ];
     };
 
   swapDevices = [ ];

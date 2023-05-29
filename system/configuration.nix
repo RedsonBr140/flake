@@ -14,6 +14,8 @@
     '';
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   swapDevices = [
   	{
   	  device = "/swapfile";
@@ -53,7 +55,7 @@
   users.users.redson = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "libvirtd" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -65,8 +67,12 @@
     htop # System stats
     neofetch # NixOS btw
     git # CVS was better
-
+    virt-manager # Virtualizing some bitches
+    glfw-wayland
   ];
+
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   security.doas = {
     enable = true;
@@ -89,7 +95,15 @@
 
   # List services that you want to enable:
 
-  services.jellyfin.enable = true;
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   # Pipewire
   services.pipewire = {

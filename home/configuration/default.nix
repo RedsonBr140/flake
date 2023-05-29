@@ -20,7 +20,8 @@
     wl-clipboard
 
     prismlauncher
-    glfw-wayland
+
+    jdk17
   ];
 
   programs.git = {
@@ -32,5 +33,9 @@
       key = "A55CD2880240ABD7";
       signByDefault = true;
     };
+  };
+
+  programs.vscode = {
+    enable = true;
   };
 }

@@ -18,6 +18,7 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {
+
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
