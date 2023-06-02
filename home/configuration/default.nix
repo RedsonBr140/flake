@@ -18,7 +18,9 @@
     grim
     slurp
     wl-clipboard
+    pavucontrol
 
+    mpv
     prismlauncher
 
     jdk17
