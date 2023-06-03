@@ -71,6 +71,9 @@
     virt-manager # Virtualizing some bitches
     glfw-wayland
     pulseaudio # pactl and stuff.
+
+    duf # I'm always using this thing
+    usbutils # Same for this.
   ];
 
   virtualisation.libvirtd.enable = true;
