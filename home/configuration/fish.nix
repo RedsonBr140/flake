@@ -12,8 +12,6 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       nix-your-shell fish | source # Respect the shell on `nix develop`
-      
-      export WLR_NO_HARDWARE_CURSORS=1
     '';
 
     plugins = with pkgs.fishPlugins; [

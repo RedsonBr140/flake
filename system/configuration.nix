@@ -34,6 +34,7 @@
   boot.tmp.cleanOnBoot = true;
 
   networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Recife";
 
