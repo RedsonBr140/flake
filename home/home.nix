@@ -1,6 +1,7 @@
 { inputs, libs, config, pkgs, ... }: {
   imports = [
     ./configuration
+    ./services
   ];
 
   home.username = "redson";
