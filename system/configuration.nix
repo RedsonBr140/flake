@@ -17,10 +17,10 @@
   nixpkgs.config.allowUnfree = true;
 
   swapDevices = [
-  	{
-  	  device = "/swapfile";
-  	  size = 2048;
-  	}
+        {
+          device = "/swapfile";
+          size = 2048;
+        }
   ];
   zramSwap.enable = true;
 
@@ -67,6 +67,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    gnome.adwaita-icon-theme
+    adwaita-qt
     nix-your-shell # Nix, respect my shell please :(
     micro # Cool editor wow
     lm_sensors # Nooo don't blow up
@@ -75,6 +77,7 @@
     git # CVS was better
     virt-manager # Virtualizing some bitches
     glfw-wayland
+    p7zip
     pulseaudio # pactl and stuff.
 
     duf # I'm always using this thing
@@ -105,6 +108,36 @@
 
   # List services that you want to enable:
 
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    extraConfig = ''
+      workgroup = WORKGROUP
+      server string = smbnix
+      netbios name = smbnix
+      client min protocol = CORE
+      client max protocol = NT1
+      server min protocol = LANMAN1
+      server max protocol = SMB2
+      guest account = nobody
+      map to guest = bad user
+    '';
+    shares = {
+      ps2smb = {
+        comment = "Pasta compartilhada com o PlayStation 2";
+        path = "/media/redson/Games/PS2";
+        browseable = "yes";
+        writeable = "yes";
+        available = "yes";
+	public = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0777";
+        "directory mask" = "0777";
+      };
+    };
+  };
+
   services.jellyfin = {
     enable = true;
     openFirewall = true;
@@ -133,6 +166,8 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 5091 ];
+  networking.firewall.allowPing = true;
+  services.samba.openFirewall = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

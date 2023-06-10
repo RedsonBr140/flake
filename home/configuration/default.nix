@@ -21,7 +21,9 @@
     pavucontrol
 
     mpv
+    transmission-qt
     prismlauncher
+    lutris
 
     jdk17
   ];
