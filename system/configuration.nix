@@ -24,11 +24,6 @@
   ];
   zramSwap.enable = true;
 
-  # TODO: Remove as soon as I apply a new thermal paste.
-  powerManagement.cpuFreqGovernor = "powersave";
-
-
-
   boot.supportedFilesystems = [ "ntfs" "btrfs" ];
   boot.loader.grub = {
     enable = true;

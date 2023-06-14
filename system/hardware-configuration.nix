@@ -16,7 +16,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a9f9ea71-91fd-4d0a-a833-134ca0a955ba";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "compress=lzo" "subvol=@" ];
     };
 
   fileSystems."/home" =
